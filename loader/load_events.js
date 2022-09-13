@@ -7,6 +7,7 @@ module.exports = (client) => {
     client.on('ready', () => client_event('ready')(client));
 
     // Guild Events
+    client.on('messageCreate', (param) => guild_event('messageCreate')(param, client));
     client.on('interactionCreate', (param) => guild_event('interactionCreate')(param, client));
     client.on('guildMemberAdd', (param => guild_event('guildMemberAdd')(param, client)));
 

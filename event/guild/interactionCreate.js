@@ -18,7 +18,7 @@ module.exports = (interaction, client) => {
     interaction.options.data.forEach(element => {
         if (element.type == ApplicationCommandOptionType.Subcommand) {
             args.__subcommand = element.name;
-            element.options.forEach(subElement =>  args[subElement.name] = subElement.value);
+            element.options.forEach(subElement => args[subElement.name] = subElement.value);
         }
         else args[element.name] = element.value;
     });
