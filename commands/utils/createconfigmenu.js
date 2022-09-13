@@ -1,4 +1,5 @@
 const { ApplicationCommandOptionType, ActionRowBuilder, SelectMenuBuilder } = require('discord.js');
+const { text_embed } = require('../../tools/embeds');
 
 module.exports = {
     name: 'createconfigmenu',
@@ -8,6 +9,11 @@ module.exports = {
         {
             name: 'default_role',
             description: 'Create a selection menu for the default role.',
+            type: ApplicationCommandOptionType.Subcommand
+        },
+        {
+            name: 'scott_tracker',
+            description: 'Create a selection menu for the Scott tracker channel.',
             type: ApplicationCommandOptionType.Subcommand
         }
     ],
@@ -24,9 +30,22 @@ module.exports = {
                     value: role.id
                 })
             });
-          
-
-            await interaction.reply({ content: 'Select a default role for new players joining the server:', components: [row] });
+            const embed = text_embed('Select a default role for new players joining the server.', client);
+            await interaction.reply({ embeds: [embed], components: [row] });
+        }
+        else if (args.__subcommand == 'scott_tracker') {
+            const row = new ActionRowBuilder().addComponents(
+                new SelectMenuBuilder()
+                .setCustomId('scott_tracker')
+                .setPlaceholder('Select a channel'));
+            interaction.guild.channels.cache.forEach(channel => {
+                row.components[0].addOptions({
+                    label: channel.name,
+                    value: channel.id
+                });
+            });
+            const embed = text_embed('Select a channel for the Scott tracker.', client);
+            await interaction.reply({ embeds: [embed], components: [row] });
         }
     },
 }

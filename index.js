@@ -16,6 +16,7 @@ const client = new Client({
 });
 
 client.slash = new Collection();
+client.cooldowns = new Map();
 
 load_events(client);
 load_slash_commands(client);
