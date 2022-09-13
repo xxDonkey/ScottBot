@@ -6,7 +6,14 @@ const { TOKEN } = process.env;
 const load_events = require('./loader/load_events');
 const load_slash_commands = require('./loader/load_slash_commands');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMembers,
+    ]
+});
 
 client.slash = new Collection();
 
