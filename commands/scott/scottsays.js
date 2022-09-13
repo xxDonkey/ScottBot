@@ -8,7 +8,7 @@ module.exports = {
             'Scott is love, Scott is life',
             'I might have two kidneys, but we only have one Scott',
             'We live for Scott',
-            'If I had a million dollars, I would give 2 million to Scott, I don\'t care about money, I only car about Scott',
+            'If I had a million dollars, I would give 2 million to Scott, I don\'t care about money, I only care about Scott',
             'ALL ARE FREE WHEN SCOTT FORGIVES YOU',
             'We :heart: Scott Visser',
             'There is only 1 true Scott',
