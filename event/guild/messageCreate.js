@@ -16,7 +16,7 @@ module.exports = (message, client) => {
                 message.member.roles.add(role);
                 const levels = require('../../data/levels.json');
                 levels.members[message.author.id] = rank.level;
-                fs.writeFileSync('./data/levels.json', JSON.stringify(levels, null, 4));;
+                fs.writeFileSync('./data/levels.json', JSON.stringify(levels, null, 4));
                 console.log(`[RANKUP] ${message.author.username} has ranked up to ${rank.name} (SECRET).`);
             }
             return;

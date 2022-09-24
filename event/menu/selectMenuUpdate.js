@@ -17,6 +17,12 @@ module.exports = (interaction, client) => {
         interaction.reply({ content: `Updated the Scott tracker ID to ${interaction.values[0]}!`, 'ephemeral': true });
         console.log(`Updated the Scott tracker ID to ${interaction.values[0]}!`);
     }
+    else if (interaction.customId == config.member_counter_selection_id) {
+        config.member_counter_id = interaction.values[0];
+        fs.writeFileSync('./data/config.json', JSON.stringify(config, null, 4));
+        interaction.reply({ content: `Updated the member counter ID to ${interaction.values[0]}!`, 'ephemeral': true });
+        console.log(`Updated the member counter ID to ${interaction.values[0]}!`);
+    }
 
     
 };

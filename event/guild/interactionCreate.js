@@ -1,5 +1,4 @@
 const { InteractionType, ApplicationCommandOptionType } = require("discord.js");
-const { options } = require("../../commands/utils/createconfigmenu");
 
 module.exports = (interaction, client) => {
     if (interaction.type !== InteractionType.ApplicationCommand) return;

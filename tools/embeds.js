@@ -1,9 +1,9 @@
 const { EmbedBuilder } = require("discord.js");
 
-function text_embed(text) {
+async function text_embed(text, client) {
     return new EmbedBuilder()
         .setDescription(text)
-        .setColor('#2025c7');
+        .setColor('3498db');
 }
 
 function image_embed() {
